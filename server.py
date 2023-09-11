@@ -1,36 +1,28 @@
 import socket
 
-host = 'localhost'
-port = 9000
+def server_program():
+    # get the hostname
+    host = socket.gethostname()
+    port = 5000  # initiate port no above 1024
 
+    server_socket = socket.socket()  # get instance
+    # look closely. The bind() function takes tuple as argument
+    server_socket.bind((host, port))  # bind host address and port together
 
-#serveur (mySocket)
-#
-mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # configure how many client the server can listen simultaneously
+    server_socket.listen(2)
+    conn, address = server_socket.accept()  # accept new connection
+    print("Connection from: " + str(address))
+    while True:
+        # receive data stream. it won't accept data packet greater than 1024 bytes
+        data = conn.recv(1024).decode()
+        if not data:
+            # if data is not received break
+            break
+        print("from connected user: " + str(data))
+        data = input(' -> ')
+        conn.send(data.encode())  # send data to the client
 
-try :
-	#on lance le serveur sur le mot bind avec les deux paramettre
-        mySocket.bind((host, port))
+    conn.close()  # close the connection
 
-#utilisation du modurle erreur socket.error
-except socket.error :
-        print("le serveur non fonctionnel")
-        exit()
-
-#nombre de personne max possible
-mySocket.listen(5)
-print("le serveur est mis en route")
-
-continuer = True
-
-#boucle pour maintenir le serveur allumer
-while continuer :
-
-	#verifie si une personne est connecter, la fonction retourne le port et
-        #l'adresse du client
-        connexion, adresse = mySocket.accept()
-
-        #affichage lors d'une connexion
-        print("une personne est connecter avec l'ip {0} et le port {1}".format(adresse[0], adresse[1]))
-
-
+server_program()

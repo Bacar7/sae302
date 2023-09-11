@@ -13,8 +13,9 @@ while b :
     print ("Mot à deviner :",Mot)
     a = str(input("Choisir une lettre ou un mot : "))
     print ("Vous avez choisi :", a)
-    d = len(a)   
-
+    d = len(a)
+    
+    
     if d <= 1: 
         
         for l in solution : 
@@ -23,7 +24,7 @@ while b :
                 break
             else :
                 c = False 
-        
+                
         if c == True :
             print("La lettre",a,"est correct !")
             lettre_trouvée = lettre_trouvée + " " + a

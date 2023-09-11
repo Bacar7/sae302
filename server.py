@@ -21,7 +21,7 @@ except socket.error :
 mySocket.listen(5)
 print("le serveur est mis en route")
 
-continuer = true
+continuer = True
 
 #boucle pour maintenir le serveur allumer
 while continuer :

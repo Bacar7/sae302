@@ -1,6 +1,5 @@
 import socket
 
-
 def server_program():
     # get the hostname
     host = socket.gethostname()
@@ -11,7 +10,7 @@ def server_program():
     server_socket.bind((host, port))  # bind host address and port together
 
     # configure how many client the server can listen simultaneously
-    server_socket.listen(2)
+    server_socket.listen(5)
     conn, address = server_socket.accept()  # accept new connection
     print("Connection from: " + str(address))
     while True:
@@ -25,7 +24,6 @@ def server_program():
         conn.send(data.encode())  # send data to the client
 
     conn.close()  # close the connection
-
 
 if __name__ == '__main__':
     server_program()

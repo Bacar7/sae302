@@ -21,5 +21,4 @@ def client_program():
     client_socket.close()  # close the connection
 
 
-
 client_program()

@@ -1,23 +1,23 @@
-import socket
-
-def client_program() :
-    host = socket.gethostname()
-    port = 5000
+import socket # Importation du module 'socket'
 
     client_socket = socket.socket()
     client_socket.connect((host, port))
 
-    message = input(" -> ")
+    mySocket = socket.socket()  # instantiate
+    mySocket.connect((host, port))  # connect to the server
+    print("Connexion établie avec le serveur")
+    
+    message = input(" -> ")  # take input
 
-    while message.lower().strip() != 'bye' :
-        client_socket.send(message.encode())
-        data = client_socket.recv(1024).decode()
-
-        print('Received from server: ' + data)
+    while message.lower().strip() != 'bye':
+        mySocket.send(message.encode())  # send message
+        data = mySocket.recv(1024).decode()  # receive response
 
         message = input(" -> ")
 
     client_socket.close()
 
-if __name__ == '__main__' :
-    client_program()   
+    mySocket.close()  # close the connection
+
+if __name__ == '__main__':
+    client_program()

@@ -1,31 +1,24 @@
-import socket
+import socket                   # Importation du module 'socket'
 
+def server_program():                   # Définition du programme serveur (fonction)
+    host = socket.gethostname()                 # Obtient le nom d'hôte
+    port = 5000                 # Initialise le numéro de port au-dessus de 1024
 
-def server_program():
-    # get the hostname
-    host = socket.gethostname()
-    port = 5000  # initiate port no above 1024
+    maSocket = socket.socket()                  # Obtient l'instance
+    maSocket.bind((host, port))                 # Lie l'adresse de l'hôte et son port ensemble
 
-    maSocket = socket.socket()  # get instance
-    # look closely. The bind() function takes tuple as argument
-    maSocket.bind((host, port))  # bind host address and port together
-
-    # configure how many client the server can listen simultaneously
-    maSocket.listen(5)
-    conn, address = maSocket.accept()  # accept new connection
+    maSocket.listen(5)                  # Configure le nombre de clients possible à l'écoute simultanément
+    conn, address = maSocket.accept()                   # Accepte la nouvelle connexion
     print("Connection from: " + str(address))
-    while True:
-        # receive data stream. it won't accept data packet greater than 1024 bytes
-        data = conn.recv(1024).decode()
+    while True:    
+        data = conn.recv(1024).decode()                 # Reçoit les données en direct. Il n'accepte pas les paquets de données plus grand que 1024 bits.
         if not data:
-            # if data is not received break
-            break
+            break                   # Si les données ne sont pas reçus, on stoppe
         print("from connected user: " + str(data))
         data = input(' -> ')
-        conn.send(data.encode())  # send data to the client
+        conn.send(data.encode())                    # Envoie les données au(x) client(s)
 
-    conn.close()  # close the connection
-
+    conn.close()                    # Ferme la connexion
 
 if __name__ == '__main__':
-    server_program()
+    server_program()                    # Exécute la fonction

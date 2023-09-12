@@ -8,7 +8,7 @@ mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)                    
 try :
     mySocket.connect((host, port))                 # Tentative de connexion
 except socket.error :
-    print("Connexion échouée avec le serveur")                 # Si erreur, connexion échouée sinon réussie
+    print("Erreur : Connexion échouée avec le serveur !")                 # Si erreur, connexion échouée sinon réussie
     exit()
 
-print("Connexion établie avec le serveur")
+print("Connexion établie avec le serveur !")

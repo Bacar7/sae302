@@ -8,16 +8,16 @@ mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)                    
 try :
     mySocket.bind((host, port))                 # Tentative de connexion
 except socket.error :
-    print("Le serveur n'est pas lancé")                 # Si erreur, connexion échouée sinon réussie
+    print("Erreur : Le serveur ne s'est pas lancé !")                 # Si erreur, connexion échouée sinon réussie
     exit()
 
 mySocket.listen(5)
-print("Le serveur est mis en route")
+print("Le serveur est mis en route...")
 
 continuer = True
 
 while continuer :                   # Tant que la fonction est vraie
     connexion, adresse = mySocket.accept()                  # Le serveur établit la connexion et reste connecter
 
-    print("Une personne est connectée avec pour IP {0} et pour port {1}".format(adresse[0], adresse[1]))                    # Affiche un log de connexions clientes
+    print("Une personne s'est connectée avec l'adresse IP {0} et sur le port {1}".format(adresse[0], adresse[1]))                    # Affiche un log de connexions clientes
 

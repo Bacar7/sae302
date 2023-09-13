@@ -11,10 +11,11 @@ except socket.error :
     print("Erreur : Connexion échouée avec le serveur !")                 # Si erreur, connexion échouée sinon réussie
     exit()
 
+print("Connexion établie avec le serveur !")
+print("Lancement du jeu : Pendu")
+
 while True :
-    print("Connexion établie avec le serveur !")
     mySocket.recv(1024).decode()
-    print("Lancement du jeu : Pendu")
 
 
 

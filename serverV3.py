@@ -1,17 +1,23 @@
-import socket                   # Importation du module 'socket'
+import socket                   # Importation du module "socket"
 
-def server_game() :                   # Définition du jeu du pendu du serveur (fonction)
-    host = socket.gethostname()                 # Obtient le nom d'hôte
-    port = 5000                 # Initialise le numéro de port au-dessus de 1024
 
-    maSocket = socket.socket()                  # Obtient l'instance
-    maSocket.bind((host, port))                 # Lie ensemble l'adresse de l'hôte et son port 
+host = 'localhost'                  # Définition de l'hôte et du port de connexion
+port = 6000
 
-    maSocket.listen(2)                  # Configure le nombre de clients possible à l'écoute simultanément
-    conn, address = maSocket.accept()                   # Accepte la nouvelle connexion
-    print("Connexion de : " + str(address))
-    
-    conn.close()                    # Ferme la connexion
+mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)                    # Fonction de socket
 
-if __name__ == '__main__' :
-    server_game()                    # Exécute la fonction
+try :
+    mySocket.bind((host, port))                 # Tentative de connexion
+except socket.error :
+    print("Erreur : Le serveur ne s'est pas lancé !")                 # Si erreur, connexion échouée sinon réussie
+    exit()
+
+mySocket.listen(5)
+print("Le serveur est mis en route...")
+
+while True :                   # Tant que la fonction est vraie
+    connexion, adresse = mySocket.accept()                  # Le serveur établit la connexion et reste connecter
+    print("Une personne s'est connectée avec l'adresse IP {0} et sur le port {1}".format(adresse[0], adresse[1]))                    # Affiche un log de connexions clientes
+    game = ...
+    connexion.send(game.encode())
+

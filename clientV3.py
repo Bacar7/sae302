@@ -1,14 +1,20 @@
-import socket                   # Importation du module 'socket'
+import socket # Importation du module "socket"
 
-def client_game() :
-    host = socket.gethostname()
-    port = 5000                 # Port du serveur socket
+host = 'localhost'                  # Définition de l'hôte et du port de connexion
+port = 6000
 
-    mySocket = socket.socket()                  # Instance
-    mySocket.connect((host, port))                  # Connecte au serveur
-    print("Connexion établie avec le serveur")
+mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)                    # Fonction de socket
 
-    mySocket.close()                    # Ferme la connexion
+try :
+    mySocket.connect((host, port))                 # Tentative de connexion
+except socket.error :
+    print("Erreur : Connexion échouée avec le serveur !")                 # Si erreur, connexion échouée sinon réussie
+    exit()
 
-if __name__ == '__main__' :
-    client_game()
+while True :
+    print("Connexion établie avec le serveur !")
+    mySocket.recv(1024).decode()
+    print("Lancement du jeu : Pendu")
+
+
+

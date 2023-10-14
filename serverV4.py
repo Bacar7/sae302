@@ -164,7 +164,7 @@ def main():
 
     server_socket = socket.socket()  # Crée un socket pour le serveur
     server_socket.bind((host, port))  # Attache l'adresse de l'hôte et le port au socket
-    server_socket.listen(3)  # Limite à 2 clients simultanés
+    server_socket.listen(2)  # Limite à 2 clients simultanés
 
     # "f" indique à Python d'évaluer les expressions à l'intérieur des accolades {} et de les remplacer par leurs valeurs respectives.
     print(f"Le serveur écoute sur le port {port}...")
@@ -172,18 +172,21 @@ def main():
     while True:
         client_socket, addr = server_socket.accept()  # Accepte une nouvelle connexion cliente
 
-        if clients < 3:  # Vérifie s'il y a de la place pour un nouveau client
+        if clients < 2:  # Vérifie s'il y a de la place pour un nouveau client
             clients += 1  # Incrémente le nombre de clients connectés
             
             #threads: permet au programme d'accomplir plusieurs tâches en même temps,
-            # une équipe travaillant sur un projet. Chaque membre de l'équipe est 
-            # comme un thread, capable de faire une partie du travail en même temps 
-            # que les autres.
-            #crée un nouvel objet de type thread avec la classe Thread du module threading.
+            #on crée un nouvel objet de type thread avec la classe Thread du module threading.
             #target spécifie la fonction que le thread exécutera. 
             #args spécifie les arguments à passer à la fonction (jeu_pendu)
             client_pendu = threading.Thread(target=jeu_pendu, args=(client_socket,))
-            client_pendu.start()  # Lance un thread pour gérer le client
+            #On crée un nouveau thread (client_pendu) qui exécutera la fonction jeu_pendu 
+            #avec le socket spécifique du client en tant qu'argument.
+            
+            client_pendu.start()  # On démarre le thread, la fonction jeu_pendu 
+            #commence à s'exécuter de manière indépendante dans ce thread. 
+            #cela permet au serveur de continuer à accepter d'autres connexions pendant 
+            #que chaque client est géré.
         else:
             print("Nombre maximal de clients atteint. Refus de la connexion.")
             client_socket.close()  # Ferme la connexion du client si le nombre maximal est atteint

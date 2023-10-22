@@ -67,7 +67,7 @@ Selon votre système d'exploitation, Visual Studio Code utilise le terminal lié
 
 Veuillez utiliser la version stable de l'application pour pouvoir profiter pleinement des fonctionnalités.
 
-* **Dernière version stable :** 
+* **Dernière version stable :** 8.0
 
 ## Auteurs
 

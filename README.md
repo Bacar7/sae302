@@ -11,21 +11,53 @@ Vous devez vous munir d'un simple ordinateur ayant un système d'exploitation (W
 Voici avant tout les pré-requis pour pouvoir utiliser correctement l'application :
 
 - Avoir un ordinateur sous OS (Windows ou Linux) - MAC OS non compatible
-- Se munir de la version la plus récente du projet - Voir rubrique **Versions**
+- Se munir de la version la plus récente du projet - Voir rubrique ***Versions***
 - Préparer un terminal pour le lancement de l'application (Visual Studio Code ou terminal de l'OS)
 
 ### Installation
 
-Avant de pouvoir utiliser notre application, il faut dans un premier temps 
+Avant de pouvoir utiliser notre application, il vous faut installer Python. 
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
+* Sur **Windows** : 
 
+1. Téléchargez la dernière version du programme d'installation exécutable de Python pour Windows x86-64 à partir de la page de [téléchargements](https://www.python.org/downloads/) du site officiel de Python.
 
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+2. Exécutez le fichier exécutable du programme d'installation Python que vous avez téléchargé à l'étape précédente.
+
+Sélectionnez les options suivantes dans la fenêtre du programme d'installation de Python pour configurer les étapes d'installation de l'interface de la ligne de commande EB qui suivent.
+
+3. Choisissez d'ajouter l'exécutable Python à votre chemin.
+
+4. Choisissez *Install Now* (Installer maintenant).
+
+* Sur **Linux** :
+
+1. Mettez à jour les paquets de votre distribution Linux (Debian, Ubuntu, Kali Linux, etc...) :
+```bash
+      sudo apt-get update
+      sudo apt-get upgrade
+```
+2. Installez Python 3 (cela installera la version la plus récente de Python 3.X.X) :
+```bash
+      sudo apt-get install python3
+```
+* Si vous utilisez Visual Studio Code, téléchargez simplement les extensions nécessaires pour utiliser Python.
 
 ## Démarrage
 
-Dites comment faire pour lancer votre projet
+Pour pouvoir faire focntionner l'application, vous devez procédez de la manière suivante :
+
+* Pour **Windows** :
+
+Dans au moins deux terminaux, taper dans l'un des deux l'éxecutable du fichier serveur avec la commande ``py.exe <nom_fichier>.py`` ou ``.\<nom_fichier>.py``, puis dans l'autre la même commande pour le client.
+
+* Pour **Linux** :
+
+Dans au moins deux terminaux, taper dans l'un des deux l'éxecutable du fichier serveur avec la commande ``python3 <nom_fichier>.py``, puis dans l'autre la même commande pour le client.
+
+* Avec *Visual Studio Code* :
+
+Selon votre système d'exploitation, Visual Studio Code utilise le terminal lié à celui-ci. Effectuez les mêmes méthodes précédentes en fonction de votre OS.
 
 ## Fabriqué avec
 
@@ -34,7 +66,8 @@ Dites comment faire pour lancer votre projet
 ## Versions
 
 Veuillez utiliser la version stable de l'application si vous voulez profiter pleinement des fonctionnalités.
-**Dernière version stable :** 
+
+* **Dernière version stable :** 
 
 ## Auteurs
 

@@ -1,23 +1,21 @@
-import socket
+import socket # Importation du module "socket"
 
-def main():
-    host = socket.gethostname() 
-    port = 1234
+host = 'localhost'                  # Définition de l'hôte et du port de connexion
+port = 6000
 
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((host, port))
+mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)                    # Fonction de socket
 
-    while True:
-        message = client_socket.recv(1024).decode()
-        print(message)
+try :
+    mySocket.connect((host, port))                 # Tentative de connexion
+except socket.error :
+    print("Erreur : Connexion échouée avec le serveur !")                 # Si erreur, connexion échouée sinon réussie
+    exit()
 
-        if "Bravo" in message or "Dommage" in message:
-            break
+print("Connexion établie avec le serveur !")
+print("Lancement du jeu : Pendu")
 
-        lettre_proposee = input("Proposez une lettre ou un mot : ").lower()
-        client_socket.send(lettre_proposee.encode())
+while True :
+    mySocket.recv(1024).decode()
 
-    client_socket.close()
 
-if __name__ == "__main__":
-    main()
+

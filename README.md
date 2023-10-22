@@ -1,10 +1,10 @@
 # Pendu client/serveur (SAÉ3.02)
 
-Ce projet est issu à la base d'un projet éducatif réalisé par des étudiants. Il s'agit de fameux jeu du pendu en utilisant la méthode de communication client/serveur. Le pendu est un jeu consistant à trouver un mot en devinant quelles sont les lettres qui le composent. Le jeu se joue traditionnellement à deux, avec un papier et un crayon, selon un déroulement bien particulier. Dans notre cas, le serveur imposera les mots à deviner au client qui lui répondra par le biais d’un terminal (CLI = Command-Line Interface).
+Ce projet est issu à la base d'un projet éducatif réalisé par des étudiants. Il s'agit du fameux jeu du pendu en utilisant la méthode de communication client/serveur. Le pendu est un jeu consistant à trouver un mot en devinant quelles sont les lettres qui le composent. Le jeu se joue traditionnellement à deux, avec un papier et un crayon, selon un déroulement bien particulier. Dans notre cas, le serveur imposera les mots à deviner au client qui lui répondra par le biais d’un terminal (CLI = Command-Line Interface).
 
 ## Pour commencer
 
-Vous devez vous munir d'un simple ordinateur ayant un système d'exploitation (Windows ou Linux). Cette application utilise l'interface de commande de votre système (terminal) et il n'y a rien besoin de plus pour la faire fonctionner.
+Vous devez vous munir d'un simple ordinateur ayant un système d'exploitation (Windows ou Linux). Cette application utilise l'interface de commande de votre système (terminal).
 
 ### Pré-requis
 
@@ -37,7 +37,7 @@ Sélectionnez les options suivantes dans la fenêtre du programme d'installation
       sudo apt-get update
       sudo apt-get upgrade
 ```
-2. Installez Python 3 (cela installera la version la plus récente de Python 3.X.X) :
+2. Installez Python 3 (cela installera la version la plus récente de Python 3.x.x) :
 ```bash
       sudo apt-get install python3
 ```
@@ -45,7 +45,7 @@ Sélectionnez les options suivantes dans la fenêtre du programme d'installation
 
 ## Démarrage
 
-Pour pouvoir faire focntionner l'application, vous devez procédez de la manière suivante :
+Pour pouvoir faire fonctionner l'application, vous devez procéder de la manière suivante :
 
 * Pour **Windows** :
 
@@ -65,7 +65,7 @@ Selon votre système d'exploitation, Visual Studio Code utilise le terminal lié
 
 ## Versions
 
-Veuillez utiliser la version stable de l'application si vous voulez profiter pleinement des fonctionnalités.
+Veuillez utiliser la version stable de l'application pour pouvoir profiter pleinement des fonctionnalités.
 
 * **Dernière version stable :** 
 

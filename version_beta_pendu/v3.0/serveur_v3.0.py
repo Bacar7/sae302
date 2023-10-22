@@ -1,5 +1,5 @@
 import socket                   # Importation du module "socket"
-from jeuV7 import jeu_pendu 
+from pendu/jeu_pendu_v7.0 import jeu_pendu 
 
 host = 'localhost'                  # Définition de l'hôte et du port de connexion
 port = 6000

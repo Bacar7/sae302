@@ -17,5 +17,5 @@ print("Le serveur est mis en route...")
 while True :                   # Tant que la fonction est vraie
     connexion, adresse = mySocket.accept()                  # Le serveur établit la connexion et reste connecter
     print("Une personne s'est connectée avec l'adresse IP {0} et sur le port {1}".format(adresse[0], adresse[1]))                    # Affiche un log de connexions clientes
-    connexion.send(game)
+    
 

@@ -34,7 +34,7 @@ def jeu_pendu(mySocket):
         #lower() normalise les noms d'utilisateur ce qui pert par exmple que les noms "BaCaR", 
         #"Bacar" et "BACAR" soient traités de la même manière, ce qui garanti de ne pas avoir le meme nom
         if nom_user in utilisateurs:
-           mySocket.send("\Nom déjà utilisé. Veuillez en choisir un autre.".encode())
+           mySocket.send("\nNom déjà utilisé. Veuillez en choisir un autre.".encode())
            # Si le nom d'utilisateur est déjà dans la liste, on envoi le message.
         else:
            utilisateurs.append(nom_user)
